@@ -8,7 +8,7 @@ const service = ({ strapi }: { strapi: Core.Strapi }) => ({
   getWelcomeMessage() {
     return 'Welcome to Strapi 🚀';
   },
-  async handleCRUDOperation(context: any) {
+  handleCRUDOperation(context: any) {
     const errorMessages: any = {
       inner: [],
     };

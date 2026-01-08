@@ -36,7 +36,7 @@ const register = ({ strapi }: { strapi: Core.Strapi }) => {
     if (!modelsToSubscribe.includes(context.uid)) return next();
 
     if (['create', 'update', 'clone'].includes(context.action))
-      await strapi.plugin(PLUGIN_ID).service('service').handleCRUDOperation(context);
+      strapi.plugin(PLUGIN_ID).service('service').handleCRUDOperation(context);
 
     return next();
   });
